@@ -7,12 +7,12 @@ import static org.hamcrest.core.Is.is;
 
 public class CharacterGameTest {
 
-	@Test
-	public void testIfCharacterHasAName() {
+  @Test
+  public void testIfCharacterHasAName() {
 
-		CharacterGame characterGame = new CharacterGame();
-	  characterGame.setName("Mario");
+    CharacterGame characterGame = new CharacterGame();
+    characterGame.setName("Mario");
 
-		assertThat(characterGame.getName(), is("Mario"));
-	}
+    assertThat(characterGame.getName(), is("Mario"));
+  }
 }
