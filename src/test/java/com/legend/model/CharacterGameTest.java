@@ -2,10 +2,17 @@ package com.legend.model;
 
 import org.junit.Test;
 
-public class Character {
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
-    @Test
-    public void testIfCharacterHasAName(){
+public class CharacterGameTest {
 
-    }
+	@Test
+	public void testIfCharacterHasAName() {
+
+		CharacterGame characterGame = new CharacterGame();
+	  characterGame.setName("Mario");
+
+		assertThat(characterGame.getName(), is("Mario"));
+	}
 }
