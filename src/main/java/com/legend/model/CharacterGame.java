@@ -7,7 +7,7 @@ public class CharacterGame {
 
   private String name;
   private List<Item> items;
-
+  private List<Equipment> equipments;
 
   public String getName() {
     return name;
@@ -26,7 +26,19 @@ public class CharacterGame {
     return items;
   }
 
+  public List<Equipment> getEquipments() {
+    if (equipments == null) {
+      equipments = new ArrayList<Equipment>();
+    }
+
+    return equipments;
+  }
+
   public void addItem(Item item) {
     getItems().add(item);
+  }
+
+  public void addEquipment(Equipment equipment) {
+    getEquipments().add(equipment);
   }
 }
