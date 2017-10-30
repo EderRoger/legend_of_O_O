@@ -18,12 +18,25 @@ public class CharacterGameTest {
   }
 
   @Test
-  public void testIfHasAOneItem(){
-    CharacterGame hero =   new CharacterGame();
+  public void testIfHasAOneItem() {
+    CharacterGame hero = new CharacterGame();
 
-    Item item = new Item();
+    Item item = new Item("Sword");
     hero.addItem(item);
 
     assertThat(hero.getItems().size(), is(1));
+  }
+
+  @Test
+  public void heroMustBeASwordAndShieldItem() {
+    CharacterGame hero = new CharacterGame();
+
+    Item sword = new Item("Sword");
+    hero.addItem(sword);
+
+    Item shield = new Item("Shield");
+    hero.addItem(shield);
+
+    assertThat(hero.getItems().size(), is(2));
   }
 }
