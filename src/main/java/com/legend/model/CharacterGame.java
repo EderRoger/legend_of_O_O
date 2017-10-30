@@ -6,6 +6,7 @@ import java.util.List;
 public class CharacterGame {
 
   private String name;
+  private int attack;
   private List<Item> items;
   private List<Equipment> equipments;
 
@@ -40,5 +41,13 @@ public class CharacterGame {
 
   public void addEquipment(Equipment equipment) {
     getEquipments().add(equipment);
+  }
+
+  public int getAttack() {
+    return attack;
+  }
+
+  public void setAttack(int attack) {
+    this.attack = attack;
   }
 }
