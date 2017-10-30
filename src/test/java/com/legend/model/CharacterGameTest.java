@@ -3,22 +3,33 @@ package com.legend.model;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
 
 public class CharacterGameTest {
 
   @Test
-  public void testIfCharacterHasAName() {
+  public void testMustHaveAName() {
 
     CharacterGame hero = new CharacterGame();
     hero.setName("Mario");
 
     assertThat(hero.getName(), is("Mario"));
-
   }
 
   @Test
-  public void testIfHasAOneItem() {
+  public void testMustHaveAttackAndEnergyPoints(){
+    CharacterGame hero = new CharacterGame();
+    hero.setName("Mario");
+    hero.setAttack(10);
+    hero.setEnergy(20);
+
+    assertThat(hero.getAttack(), greaterThan(0) );
+    assertThat(hero.getEnergy(), greaterThan(0) );
+  }
+
+  @Test
+  public void testMustHaveAOneItem() {
     CharacterGame hero = new CharacterGame();
 
     Item item = new Item("Potion");
@@ -28,7 +39,7 @@ public class CharacterGameTest {
   }
 
   @Test
-  public void heroMustBeASwordAndShieldItem() {
+  public void testMustHaveASwordAndShieldItem() {
     CharacterGame hero = new CharacterGame();
 
     Equipment sword = new Equipment("Sword");
