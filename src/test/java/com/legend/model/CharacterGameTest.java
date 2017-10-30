@@ -21,7 +21,7 @@ public class CharacterGameTest {
   public void testIfHasAOneItem() {
     CharacterGame hero = new CharacterGame();
 
-    Item item = new Item("Sword");
+    Item item = new Item("Potion");
     hero.addItem(item);
 
     assertThat(hero.getItems().size(), is(1));
@@ -31,12 +31,12 @@ public class CharacterGameTest {
   public void heroMustBeASwordAndShieldItem() {
     CharacterGame hero = new CharacterGame();
 
-    Item sword = new Item("Sword");
-    hero.addItem(sword);
+    Equipment sword = new Equipment("Sword");
+    hero.addEquipment(sword);
 
-    Item shield = new Item("Shield");
-    hero.addItem(shield);
+    Equipment shield = new Equipment("Shield");
+    hero.addEquipment(shield);
 
-    assertThat(hero.getItems().size(), is(2));
+    assertThat(hero.getEquipments().size(), is(2));
   }
 }
