@@ -7,6 +7,7 @@ public class CharacterGame {
 
   private String name;
   private int attack;
+  private int energy;
   private List<Item> items;
   private List<Equipment> equipments;
 
@@ -49,5 +50,13 @@ public class CharacterGame {
 
   public void setAttack(int attack) {
     this.attack = attack;
+  }
+
+  public int getEnergy() {
+    return energy;
+  }
+
+  public void setEnergy(int energy) {
+    this.energy = energy;
   }
 }
