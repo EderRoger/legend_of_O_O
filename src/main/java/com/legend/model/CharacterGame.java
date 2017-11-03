@@ -45,11 +45,6 @@ public class CharacterGame {
     getEquipments().add(equipment);
   }
 
-  public int getAttack() {
-    return getEquipments().stream().filter(equipment -> "attack".equalsIgnoreCase(equipment.getType()))
-            .mapToInt(equipment -> equipment.getPoint()).sum();
-  }
-
 
   public int getEnergy() {
     return energy;
@@ -72,5 +67,10 @@ public class CharacterGame {
     // return getEquipments().stream().mapToInt(equipment ->  equipment.getPoint()).sum() ;
     return getEquipments().stream().filter(equipment -> "defense".equalsIgnoreCase(equipment.getType()))
             .collect(Collectors.summingInt(equipment -> equipment.getPoint()));
+  }
+
+  public int getAttack() {
+    return getEquipments().stream().filter(equipment -> "attack".equalsIgnoreCase(equipment.getType()))
+            .mapToInt(equipment -> equipment.getPoint()).sum();
   }
 }
