@@ -12,6 +12,10 @@ public class Equipment {
     this.type = type;
   }
 
+  public String getName(){
+    return name;
+  }
+
   public int getPoint() {
     return point;
   }
