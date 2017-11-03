@@ -46,14 +46,14 @@ public class CharacterGameTest {
     hero.setName("Mario");
     hero.setEnergy(20);
 
-    Equipment sword = new Equipment("Sword", 5);
+    Equipment sword = new Equipment("Sword", 5, "Attack");
     hero.addEquipment(sword);
 
-    Equipment shield = new Equipment("Shield", 10);
+    Equipment shield = new Equipment("Shield", 10, "Defense");
     hero.addEquipment(shield);
 
     assertThat(hero.getAttack(), is(5) );
-    assertThat(hero.getDefense(), greaterThan(15));
+    assertThat(hero.getDefense(), is(10));
   }
 
   @Test
@@ -70,10 +70,10 @@ public class CharacterGameTest {
   public void testMustHaveASwordAndShieldItem() {
     CharacterGame hero = new CharacterGame();
 
-    Equipment sword = new Equipment("Sword", 10);
+    Equipment sword = new Equipment("Sword", 10, "Attack");
     hero.addEquipment(sword);
 
-    Equipment shield = new Equipment("Shield", 10);
+    Equipment shield = new Equipment("Shield", 10, "Defense");
     hero.addEquipment(shield);
 
     assertThat(hero.getEquipments().size(), is(2));
