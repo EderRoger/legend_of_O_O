@@ -60,7 +60,7 @@ public class CharacterGameTest {
   public void testMustHaveAOneItem() {
     CharacterGame hero = new CharacterGame();
 
-    Item item = new Item("Potion");
+    Item item = new Item("Potion", 10);
     hero.addItem(item);
 
     assertThat(hero.getItems().size(), is(1));
