@@ -8,8 +8,6 @@ public class CharacterGame {
 
   private String name;
   private String type;
-  private int attack;
-  private int defense;
   private int energy;
   private List<Item> items;
   private List<Equipment> equipments;
