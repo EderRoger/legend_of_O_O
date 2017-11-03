@@ -6,7 +6,9 @@ import java.util.List;
 public class CharacterGame {
 
   private String name;
+  private String type;
   private int attack;
+  private int defense;
   private int energy;
   private List<Item> items;
   private List<Equipment> equipments;
@@ -45,12 +47,9 @@ public class CharacterGame {
   }
 
   public int getAttack() {
-    return attack;
+    return getEquipments().stream().mapToInt(equipment ->  equipment.getPoint()).sum() ;
   }
 
-  public void setAttack(int attack) {
-    this.attack = attack;
-  }
 
   public int getEnergy() {
     return energy;
@@ -58,5 +57,17 @@ public class CharacterGame {
 
   public void setEnergy(int energy) {
     this.energy = energy;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public int getDefense() {
+    return getEquipments().stream().mapToInt(equipment ->  equipment.getPoint()).sum() ;
   }
 }
