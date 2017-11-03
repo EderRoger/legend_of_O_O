@@ -2,6 +2,7 @@ package com.legend.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CharacterGame {
 
@@ -47,7 +48,8 @@ public class CharacterGame {
   }
 
   public int getAttack() {
-    return getEquipments().stream().mapToInt(equipment ->  equipment.getPoint()).sum() ;
+    return getEquipments().stream().filter(equipment -> "attack".equalsIgnoreCase(equipment.getType()))
+            .mapToInt(equipment -> equipment.getPoint()).sum();
   }
 
 
@@ -68,6 +70,9 @@ public class CharacterGame {
   }
 
   public int getDefense() {
-    return getEquipments().stream().mapToInt(equipment ->  equipment.getPoint()).sum() ;
+    // another way to get the sum
+    // return getEquipments().stream().mapToInt(equipment ->  equipment.getPoint()).sum() ;
+    return getEquipments().stream().filter(equipment -> "defense".equalsIgnoreCase(equipment.getType()))
+            .collect(Collectors.summingInt(equipment -> equipment.getPoint()));
   }
 }
