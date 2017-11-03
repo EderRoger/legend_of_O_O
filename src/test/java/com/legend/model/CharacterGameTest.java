@@ -18,14 +18,42 @@ public class CharacterGameTest {
   }
 
   @Test
-  public void testMustHaveAttackAndEnergyPoints(){
+  public void testMustBeHaveAEnemyOrHero(){
     CharacterGame hero = new CharacterGame();
     hero.setName("Mario");
-    hero.setAttack(10);
+    hero.setType("Hero");
+
+    CharacterGame enemy = new CharacterGame();
+    enemy.setName("Bowser");
+    enemy.setType("Enemy");
+
+    assertThat(hero.getType(), is("Hero") );
+    assertThat(enemy.getType(), is("Enemy") );
+  }
+
+  @Test
+  public void testMustHaveEnergyPoints(){
+    CharacterGame hero = new CharacterGame();
+    hero.setName("Mario");
     hero.setEnergy(20);
 
-    assertThat(hero.getAttack(), greaterThan(0) );
-    assertThat(hero.getEnergy(), greaterThan(0) );
+    assertThat(hero.getEnergy(), greaterThan(10));
+  }
+
+  @Test
+  public void testMustHaveAttackAndDefensePoints(){
+    CharacterGame hero = new CharacterGame();
+    hero.setName("Mario");
+    hero.setEnergy(20);
+
+    Equipment sword = new Equipment("Sword", 5);
+    hero.addEquipment(sword);
+
+    Equipment shield = new Equipment("Shield", 10);
+    hero.addEquipment(shield);
+
+    assertThat(hero.getAttack(), is(5) );
+    assertThat(hero.getDefense(), greaterThan(15));
   }
 
   @Test
@@ -42,10 +70,10 @@ public class CharacterGameTest {
   public void testMustHaveASwordAndShieldItem() {
     CharacterGame hero = new CharacterGame();
 
-    Equipment sword = new Equipment("Sword");
+    Equipment sword = new Equipment("Sword", 10);
     hero.addEquipment(sword);
 
-    Equipment shield = new Equipment("Shield");
+    Equipment shield = new Equipment("Shield", 10);
     hero.addEquipment(shield);
 
     assertThat(hero.getEquipments().size(), is(2));
