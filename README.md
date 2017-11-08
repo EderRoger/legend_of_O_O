@@ -8,7 +8,7 @@ Our hero has a name, experience points?, points of attack and points of energy a
 
 - Attack Equipment: Sword <Attack 11>
 - Defense Equipment: Shield <Defense 10>
-- Items: 1 health potion (which recovers 5 EP (energy points)) and 1 magic potion (which recovers 5 MP (magic point))
+- Items: 1 health potion (which recovers 5 EP (energy points))
 
 **Simple battle**
 
