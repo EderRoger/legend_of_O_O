@@ -35,4 +35,7 @@ public class Scenario {
   public void setHero(CharacterGame hero) {
     this.hero = hero;
   }
+
+
+
 }
