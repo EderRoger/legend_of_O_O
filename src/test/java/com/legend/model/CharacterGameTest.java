@@ -18,7 +18,7 @@ public class CharacterGameTest {
   }
 
   @Test
-  public void testMustBeHaveAEnemyOrHero(){
+  public void testMustBeAEnemyOrHero(){
     CharacterGame hero = new CharacterGame();
     hero.setName("Mario");
     hero.setType("Hero");
@@ -76,6 +76,8 @@ public class CharacterGameTest {
     Equipment shield = new Equipment("Shield", 10, "Defense");
     hero.addEquipment(shield);
 
-    assertThat(hero.getEquipments().size(), is(2));
+    assertThat(hero.getEquipments().get(0).getName(), is("Sword"));
+    assertThat(hero.getEquipments().get(1).getName(), is("Shield"));
+
   }
 }
