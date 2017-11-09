@@ -19,10 +19,14 @@ of defense and points of energy.
 During the battle, there is some logic to calculate the damage done by a single attack: 
 (DD: damage done)
 
-- DD = Attack Points of the Attacker - Defense Points of the Defender times a random factor
-- The Attack Point can be a sum of the character personal attack point times her/his attack points
-- The Defense Point
-
+- DD(Damage Done) = Attack Points of the Attacker - Defense Points(from the enemy or vice versa)
+- The Attack Point change with luck factor
+  - Luck Factor is a random number (1...100) 
+    - Miss (0 - 3) - Character lost the attack - No damage done
+    - Normal (4 - 70) - Attack Point is a personal attack point sum - If power attack is 40, then 40 is a damage done
+    - Luck (71 - 96) - Attack Point + (50% of personal attack point) - If power attack is 40, then 60 is a damage done
+    - Critical (97 - 100) - Attack point is a double of the attack point - If power attack is 40, then 80 is a damage done
+  
 The actions a character can do in a battle, during her/his turn, are: 
 
 - attack, 
